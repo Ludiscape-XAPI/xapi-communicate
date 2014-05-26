@@ -22,7 +22,7 @@ function ludiscapeFinishActivity(mail,activityId,title,success,duration){
 				}
 			}, "result":{
 				"score":{
-					"scaled":score_scaled,
+					"scaled":100,
 					"raw":score_raw,
 					"min":0,
 					"max":100
