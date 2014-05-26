@@ -2,7 +2,7 @@ var actions = [];
 var stats = [];
 
 //This function is automatically called at the end of a lesson e-learning ludiscape
-function ludiscapeFinishActivity(mail,activityId,title,success,duration){
+function ludiscapeFinishActivity(login,activityId,title,success,duration){
 	
 	if(document.getElementById("xapiUrl")){
 	
@@ -11,7 +11,7 @@ function ludiscapeFinishActivity(mail,activityId,title,success,duration){
 		var stat = {
 			"actor":{
 				"objectType": "Agent",
-				"mbox":"mailto:" + mail
+				"mbox":"mailto:" + login
 			}, "verb":{
 				"id":"http://adlnet.gov/expapi/verbs/completed", 
 				"display":{ "fr-FR":"a terminé" }
@@ -34,7 +34,7 @@ function ludiscapeFinishActivity(mail,activityId,title,success,duration){
 		stats.push(stat);
 		
 		var jsonstring = JSON.stringify(stats);
-		var urlTracking = xapiUrl+'?login='+mail+'&&statements='+jsonstring;
+		var urlTracking = xapiUrl+'?login='+login+'&&statements='+jsonstring;
 		
 		document.getElementById("xapiFrame").src = urlTracking;
 	
