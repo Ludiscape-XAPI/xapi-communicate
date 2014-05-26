@@ -1,5 +1,5 @@
-var actions = [];
-var stats = [];
+var Xapiactions = [];
+var Xapistats = [];
 
 //This function is automatically called at the end of a lesson e-learning ludiscape
 function ludiscapeFinishActivity(login,activityId,title,success,duration,score_raw){
@@ -22,7 +22,7 @@ function ludiscapeFinishActivity(login,activityId,title,success,duration,score_r
 				}
 			}, "result":{
 				"score":{
-					"scaled":100,
+					"scaled":score_scaled,
 					"raw":score_raw,
 					"min":0,
 					"max":100
@@ -31,9 +31,9 @@ function ludiscapeFinishActivity(login,activityId,title,success,duration,score_r
 				"duration":duration
 			}
 		};
-		stats.push(stat);
+		Xapistats.push(stat);
 		
-		var jsonstring = JSON.stringify(stats);
+		var jsonstring = JSON.stringify(Xapistats);
 		var urlTracking = xapiUrl+'?login='+login+'&&statements='+jsonstring;
 		
 		document.getElementById("xapiFrame").src = urlTracking;
