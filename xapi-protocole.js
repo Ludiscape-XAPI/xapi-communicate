@@ -2,7 +2,7 @@ var actions = [];
 var stats = [];
 
 //This function is automatically called at the end of a lesson e-learning ludiscape
-function ludiscapeFinishActivity(login,activityId,title,success,duration){
+function ludiscapeFinishActivity(login,activityId,title,success,duration,score_raw){
 	
 	if(document.getElementById("xapiUrl")){
 	
